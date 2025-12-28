@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cindy | Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#92A8D1;
+      --card:#ffffff;
+      --text:#3b3b3b;
+      --primary:#92A8D1;
+      --accent:#F4C2C2;
+    }
+
+    body.dark{
+      --bg:#1e293b;
+      --card:#2b2b3b;
+      --text:#e5e7eb;
+    }
+
+    *{
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Segoe UI, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* NAVIGATION */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:linear-gradient(90deg, var(--accent), var(--primary));
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:15px 0;
+      box-shadow:0 4px 15px rgba(0,0,0,.15);
+      z-index:100;
+    }
+
+    nav a{
+      margin:0 14px;
+      text-decoration:none;
+      color:var(--text);
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#000;
+      transform:translateY(-2px);
+    }
+
+    .toggle{
+      cursor:pointer;
+      padding:6px 14px;
+      border:1px solid var(--primary);
+      border-radius:20px;
+      font-size:18px;
+      margin-left:12px;
+    }
+
+    section{
+      padding:100px 40px;
+      max-width:1150px;
+      margin:auto;
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:50px;
+      letter-spacing:1px;
+    }
+
+    /* HOME */
+    #home{
+      min-height:calc(100vh - 70px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .home-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    /* FLOATING PHOTO */
+    .home-img img{
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .home-text{
+      max-width:650px;
+    }
+
+    blockquote{
+      font-style:italic;
+      margin-top:12px;
+      opacity:0.85;
+    }
+
+    /* GRID + CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:25px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    /* PROJECT IMAGE */
+    .project-thumbnail{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      border-radius:14px;
+      margin-bottom:15px;
+    }
+
+    /* FORMS */
+    form input, form textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:12px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+
+    button{
+      padding:10px;
+      border:none;
+      border-radius:8px;
+      background:#F4C2C2;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    button:hover{
+      opacity:0.9;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      font-size:14px;
+      opacity:0.8;
+    }
+
+    @media(max-width:900px){
+      .home-content{
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#achievements">Awards</a>
+  <a href="#contact">Contact</a>
+  <span class="toggle" id="modeIcon" onclick="toggleMode()">☀️</span>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="home-content">
+    <div class="home-img">
+      <img src="c:\Users\Cindy\Downloads\48dfa9b3-3923-4481-8ed1-88fd822a9f63.jpg" alt="Cindy Photo">
+    </div>
+    <div class="home-text">
+      <h1>Hello, I'm Cindy!</h1>
+      <h3>A K-Drama Fan | IT Student</h3>
+      <p>
+        I’m Cindy, an IT student who enjoys learning new technologies, improving my skills,
+        and turning ideas into meaningful digital experiences. I enjoy watching K-dramas because they inspire me and help me relax during my free time.
+      </p>
+      <blockquote>“Be the change that you wish to see in the world.” — Mahatma Gandhi</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p><strong>Education:</strong></p>
+    <ul>
+      <li>Elementary – Lim-ao Elementary School / Tongonan Elementary School</li>
+      <li>High School – Kananga National HS / Lim-ao National HS</li>
+      <li>Senior High – Western Leyte College of Ormoc</li>
+      <li>College – Eastern Visayas State University</li>
+    </ul>
+
+    <p><strong>Interests:</strong></p>
+    <ul>
+      <li>Web development and programming</li>
+      <li>Learning new technologies</li>
+      <li>Creative digital design</li>
+    </ul>
+
+    <p><strong>Hobbies:</strong></p>
+    <ul>
+      <li>Watching K-dramas and anime</li>
+      <li>Baking and cooking</li>
+      <li>Listening to music</li>
+    </ul>
+
+    <p><strong>Other Interests:</strong></p>
+    <ul>
+      <li>Aside from being an IT student, I am also a baker, baking to earn extra allowance and pay my boarding house. I work part-time as a virtual assistant, learning how to manage tasks and communicate professionally online. Balancing my studies, work, and hobbies helps me grow both personally and professionally.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Programming</h3>
+      <ul>
+        <li>HTML, CSS, JavaScript (Beginner)</li>
+        <li>Python & C (Basic)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Technical Areas</h3>
+      <ul>
+        <li>Web Development</li>
+        <li>UI Design Basics</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Tools</h3>
+      <ul>
+        <li>VS Code</li>
+        <li>Git</li>
+        <li>Linux (Basic)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Time management</li>
+        <li>Team collaboration</li>
+        <li>Willingness to learn</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="c:\Users\Cindy\Pictures\Screenshots\Screenshot 2025-12-28 165452.png" class="project-thumbnail" alt="Project">
+      <h3>Website Project</h3>
+      <p><strong>Description:</strong><br>
+        I made a website to share my life as an EVSUNista and the activities I joined. It shows my experiences, creativity, and growth as a student.
+      </p>
+      <p><strong>My Role:</strong><br>
+        Layout design, content organization, and visual structure improvement.
+      </p>
+      <p><strong>Tools Used:</strong><br>
+        Wix Website Builder
+      </p>
+      <p>
+        🔗 <a href="https://cindygalvez022005.wixsite.com/site/team-1" target="_blank">View Project</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="achievements">
+  <h2>Awards</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Elementary</h3>
+      <ul>
+        <li>Certificate of Completion</li>
+        <li>Perfect Attendance</li>
+        <li>Good Conduct Award</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Junior High</h3>
+      <ul>
+        <li>Academic Excellence</li>
+        <li>Leadership Participation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Senior High</h3>
+      <ul>
+        <li>Work Immersion Certificate</li>
+        <li>With Honors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="grid">
+    <div class="card">
+      <form>
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Message</label>
+        <textarea rows="5"></textarea>
+
+        <button>Send Message</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Contact Info</h3>
+      <p>📧 cindygalvez022005@gmail.com</p>
+      <p>📞 09484616756</p>
+      <p>📷 <a href="https://www.instagram.com/cndy.glvz" target="_blank">Instagram</a></p>
+      <p>📘 <a href="https://www.facebook.com/profile.php?id=61578291166404" target="_blank">Facebook</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>© Cindy Galvez</footer>
+
+<script>
+  const body = document.body;
+  const icon = document.getElementById("modeIcon");
+
+  function updateIcon() {
+    icon.textContent = body.classList.contains("dark") ? "🌙" : "☀️";
+  }
+
+  function toggleMode() {
+    body.classList.toggle("dark");
+    localStorage.setItem("mode", body.classList.contains("dark") ? "dark" : "light");
+    updateIcon();
+  }
+
+  if (localStorage.getItem("mode") === "dark") {
+    body.classList.add("dark");
+  }
+  updateIcon();
+</script>
+
+</body>
+</html>
